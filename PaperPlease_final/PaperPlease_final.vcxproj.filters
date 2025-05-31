@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\01.Manager">
+      <UniqueIdentifier>{91923089-a391-4ee7-ae99-ab69630c1fe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Render">
+      <UniqueIdentifier>{32d796be-9145-46b3-8cbb-cf44df58e384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene">
+      <UniqueIdentifier>{ebea81b7-8b53-415b-b9b2-88e4a302e5e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04.Animation">
+      <UniqueIdentifier>{af719456-6c46-48f6-a511-82f55282e744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04.Animation\00.Policy">
+      <UniqueIdentifier>{48331048-34a3-4bb7-9b1d-9b6cd7dd4f91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00.Default">
+      <UniqueIdentifier>{def5bd19-a692-46d8-ac8f-aded9b5a5112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.GameObject">
+      <UniqueIdentifier>{bc95d7bf-cd0a-41a8-b8f8-37b7def6b0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.GameObject\01.NPC">
+      <UniqueIdentifier>{71816114-3885-44a1-bfda-42910e8be86f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.GameObject\01.NPC\01.SoldierNpc">
+      <UniqueIdentifier>{3cdb57fb-1daa-4f2a-a3dd-5159789d1f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.GameObject\01.NPC\02.Visitor">
+      <UniqueIdentifier>{eedda17b-b370-4b90-b0d2-df1d57d30f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\06.UI">
+      <UniqueIdentifier>{f12df0d6-93fd-4499-8122-0d51f2aec25d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\06.UI\01.StempBar">
+      <UniqueIdentifier>{acaeb8d5-273a-4942-8b38-7be487ff0452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\06.UI\01.StempBar\01.Stemp">
+      <UniqueIdentifier>{7a63e820-35f7-4f2a-aed7-e2cb5bb1b972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\07.Header">
+      <UniqueIdentifier>{60513e28-95fa-487f-acee-3c8ce2b550f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AnimationManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleBufferManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameRateManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGameScene.h">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneType.h">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicVisualLayer.h">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawCommand.h">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticVisualLayer.h">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticRenderCheckPoint.h">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageResource.h">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>소스 파일\04.Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlaybackPolicy.h">
+      <Filter>소스 파일\04.Animation\00.Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="PingPongPolicy.h">
+      <Filter>소스 파일\04.Animation\00.Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="OncePolicy.h">
+      <Filter>소스 파일\04.Animation\00.Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="LoopPolicy.h">
+      <Filter>소스 파일\04.Animation\00.Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>소스 파일\00.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>소스 파일\00.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="PaperPlease_final.h">
+      <Filter>소스 파일\00.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>소스 파일\00.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일\00.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>소스 파일\05.GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="NPCState.h">
+      <Filter>소스 파일\05.GameObject\01.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcObj.h">
+      <Filter>소스 파일\05.GameObject\01.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="SoldierObj.h">
+      <Filter>소스 파일\05.GameObject\01.NPC\01.SoldierNpc</Filter>
+    </ClInclude>
+    <ClInclude Include="VisitorObj.h">
+      <Filter>소스 파일\05.GameObject\01.NPC\02.Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="UIBase.h">
+      <Filter>소스 파일\06.UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIStempBar.h">
+      <Filter>소스 파일\06.UI\01.StempBar</Filter>
+    </ClInclude>
+    <ClInclude Include="UIStemp.h">
+      <Filter>소스 파일\06.UI\01.StempBar\01.Stemp</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>소스 파일\07.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertStr.h">
+      <Filter>소스 파일\07.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>소스 파일\07.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PMath.h">
+      <Filter>소스 파일\07.Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleBufferManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameRateManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>소스 파일\01.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGameScene.cpp">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicVisualLayer.cpp">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawCommand.cpp">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticVisualLayer.cpp">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticRenderCheckPoint.cpp">
+      <Filter>소스 파일\02.Render</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>소스 파일\04.Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="PaperPlease_final.cpp">
+      <Filter>소스 파일\00.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\05.GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcObj.cpp">
+      <Filter>소스 파일\05.GameObject\01.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="SoldierObj.cpp">
+      <Filter>소스 파일\05.GameObject\01.NPC\01.SoldierNpc</Filter>
+    </ClCompile>
+    <ClCompile Include="VisitorObj.cpp">
+      <Filter>소스 파일\05.GameObject\01.NPC\02.Visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="UIBase.cpp">
+      <Filter>소스 파일\06.UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIStempBar.cpp">
+      <Filter>소스 파일\06.UI\01.StempBar</Filter>
+    </ClCompile>
+    <ClCompile Include="UIStemp.cpp">
+      <Filter>소스 파일\06.UI\01.StempBar\01.Stemp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PaperPlease_final.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="PaperPlease_final.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

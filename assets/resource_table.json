@@ -1,0 +1,235 @@
+{
+  "images": {
+    "CheckpointBack": {
+      "path": "..\\assets\\CheckpointBack.png",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 2.3,
+        "y": 2.1
+      },
+      "originalResolution": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "Desk": {
+      "path": "..\\assets\\Desk.png",
+      "position": {
+        "x": 0,
+        "y": 214
+      },
+      "scale": {
+        "x": 2.3,
+        "y": 2.33
+      },
+      "originalResolution": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "BoothWall": {
+      "path": "..\\assets\\BoothWall.png",
+      "position": {
+        "x": 0,
+        "y": 214
+      },
+      "scale": {
+        "x": 2.3,
+        "y": 2.2
+      },
+      "originalResolution": {
+        "w": 1280,
+        "h": 720
+      }
+    }
+  },
+  "npcSprite": {
+    "soldier": {
+      "path": "..\\assets\\BorderAnim.png",
+      "rect": {
+        "idle": {
+          "playback": "pingpong",
+          "frames": [
+            {
+              "x": 248,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            },
+            {
+              "x": 280,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            },
+            {
+              "x": 312,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            },
+            {
+              "x": 344,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            }
+          ]
+        },
+        "walk": {
+          "playback": "loop",
+          "frames": [
+            {
+              "x": 419,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            },
+            {
+              "x": 451,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            },
+            {
+              "x": 483,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            },
+            {
+              "x": 515,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            }
+          ]
+        }
+      },
+      "position": {
+        "x": null,
+        "y": null
+      },
+      "scale": {
+        "x": 2.3,
+        "y": 2.1
+      },
+      "originalResolution": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "visitor": {
+      "path": "..\\assets\\BorderAnim.png",
+      "rect": {
+        "idle": {
+          "playback": "pingpong",
+          "frames": [
+            {
+              "x": 248,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            },
+            {
+              "x": 280,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            },
+            {
+              "x": 312,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            },
+            {
+              "x": 344,
+              "y": 196,
+              "w": 24,
+              "h": 24,
+              "duration": 0.5
+            }
+          ]
+        },
+        "walk": {
+          "playback": "loop",
+          "frames": [
+            {
+              "x": 419,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            },
+            {
+              "x": 451,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            },
+            {
+              "x": 483,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            },
+            {
+              "x": 515,
+              "y": 259,
+              "w": 24,
+              "h": 24,
+              "duration": 0.1
+            }
+          ]
+        }
+      },
+      "position": {
+        "x": null,
+        "y": null
+      },
+      "scale": {
+        "x": 2.3,
+        "y": 2.1
+      },
+      "originalResolution": {
+        "w": 1280,
+        "h": 720
+      }
+    }
+  },
+  "uiSprite": {
+    "outBooth": {
+      "path": "..\\assets\\OuterBooth.png",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 2.3,
+        "y": 2.1
+      },
+      "originalResolution": {
+        "w": 1280,
+        "h": 720
+      }
+
+    }
+  }
+}
