@@ -1,6 +1,9 @@
 #pragma once
 #include "Collision.h"
-enum class ClickMode
+//클릭모드를 여기서 나누는것이 옳은가?
+//아닌거같음 여기보단 ui매니저가 다루는방식이 더옳은가?
+//둘다 필요로 해야하는것이 맞는거같은데 그럼 그냥 define파일로 옮겨서 관리를 하는편이 훨씬좋지않나?
+enum class ClickMode //일단 보류
 {
 	NORMAL,
 	COMPARE

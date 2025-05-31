@@ -258,4 +258,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\assets\resource_table.json">
+      <Filter>소스 파일\07.Header</Filter>
+    </None>
+  </ItemGroup>
 </Project>

@@ -214,12 +214,11 @@
       }
     }
   },
-  "uiSprite": {
-    "outBooth": {
-      "path": "..\\assets\\OuterBooth.png",
+  "uiComplexSprite": {
+    "StampBar": {
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 1000,
+        "y": 600
       },
       "scale": {
         "x": 2.3,
@@ -228,8 +227,49 @@
       "originalResolution": {
         "w": 1280,
         "h": 720
+      },
+      "parts": {
+        "top": {
+          "path": "..\\assets\\StampBarTop.png",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "zOrder": 0
+        },
+        "mid": {
+          "path": "..\\assets\\StampBarMid.png",
+          "offset": {
+            "x": 0,
+            "y": 20
+          },
+          "zOrder": 2
+        },
+        "stamp_approve": {
+          "path": "..\\assets\\StampBotApproved.png",
+          "offset": {
+            "x": 30,
+            "y": 120
+          },
+          "zOrder": 1
+        },
+        "stamp_deny": {
+          "path": "..\\assets\\StampBotDenied.png",
+          "offset": {
+            "x": 130,
+            "y": 120
+          },
+          "zOrder": 1
+        },
+        "lamp": {
+          "path": "..\\assets\\StampBarLamp.png",
+          "offset": {
+            "x": 10,
+            "y": -10
+          },
+          "zOrder": 3
+        }
       }
-
     }
   }
-}
+} 

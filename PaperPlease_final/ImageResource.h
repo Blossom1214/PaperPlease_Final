@@ -4,11 +4,19 @@
 #include <functional>
 #include <vector>
 #include <unordered_map>
+#include "PMath.h"
 enum class PlaybackType
 {
 	LOOP,
 	ONCE,
 	PINGPONG
+};
+struct Parts
+{
+	std::wstring path;
+	Vector2 offset;
+	int zOrder;
+	std::unique_ptr<Gdiplus::Image> img = nullptr;
 };
 struct Frame {
 	RECT rect{};
@@ -21,9 +29,12 @@ struct AnimationSequence {
 };
 struct ImageResource
 {
-	std::unique_ptr<Gdiplus::Image> img; //진짜이미지의 경로
-	
-	std::unordered_map<std::wstring, AnimationSequence> animations;//애니메이션의 경로들...(키는 idle같은거고 애니메이션시퀀스는 벡터로두기)
+	//진짜이미지의 경로
+	std::unique_ptr<Gdiplus::Image> img;
+	//애니메이션의 경로들...(키는 idle같은거고 애니메이션시퀀스는 벡터로두기)
+	std::unordered_map<std::wstring, AnimationSequence> animations;
+	//복합적인 구조로 되어잇는 ui같은경우 이런식으로 사용해야할듯?//ex)여권 도장바 등등등
+	std::unordered_map<std::wstring, Parts> parts;
 
 	POINT pos{ 0,0 };//x,y위치
 	float scaleX = 1.0f;//스케일

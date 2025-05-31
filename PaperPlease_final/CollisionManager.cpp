@@ -8,12 +8,13 @@ bool CollisionManager::CheckClickCollision(const RectCollision& Rect)
 	_MousePointer = { static_cast<float>(pt.x),static_cast<float>(pt.y) };
 	auto Rt=Rect.GetBoundary();
     bool isNowClicked = (GetAsyncKeyState(VK_LBUTTON) & 0x8000);
-
+    
     if (PtInRect(&Rt, pt) && isNowClicked && !_wasClicked)
     {
         _wasClicked = true;
         return true;
     }
+    
     else if (!isNowClicked)
     {
         _wasClicked = false;
