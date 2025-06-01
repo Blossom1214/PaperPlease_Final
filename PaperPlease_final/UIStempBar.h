@@ -1,5 +1,7 @@
 #pragma once
 #include "UIBase.h"
+#include <memory>
+class UIstemp;
 class UIStempBar : public UIBase
 {
 public:
@@ -13,7 +15,8 @@ private:
 	// 현재 열려있는지 아닌지를 확인해야함
 	// 다시누르면 돌아가야하기때문
 	bool _StempOn = false;
-
+	//std::unique_ptr<UIstemp> _stamp_approve;
+	//std::unique_ptr<UIstemp> _stamp_deny;
 
 };
 //이거 z오더 반드시 필요하긴 할듯 

@@ -20,7 +20,11 @@ void UIStempBar::Update(float dt)
    
     if (CollisionManager::GetInstance().CheckClickCollision(*_collision))
     {
-        ClickKey();
+        UIStempBar::ClickKey();
+        if (_StempOn)
+        {
+
+        }
     }
 
 }
