@@ -11,12 +11,20 @@ enum class PlaybackType
 	ONCE,
 	PINGPONG
 };
+//파츠UI용도
 struct Parts
 {
 	std::wstring path;
 	Vector2 offset;
 	int zOrder;
 	std::unique_ptr<Gdiplus::Image> img = nullptr;
+
+	Parts() = default;
+	Parts(Parts&&) = default;
+	Parts& operator=(Parts&&) = default;
+
+	Parts(const Parts&) = delete;
+	Parts& operator=(const Parts&) = delete;
 };
 struct Frame {
 	RECT rect{};
@@ -50,7 +58,8 @@ struct ImageResource
 			scaleX == other.scaleX &&
 			scaleY == other.scaleY &&
 			originalResolution.cx == other.originalResolution.cx &&
-			originalResolution.cy == other.originalResolution.cy;
+			originalResolution.cy == other.originalResolution.cy&&
+			parts.size() == other.parts.size();
 
 	}
 };
@@ -64,7 +73,8 @@ namespace std {//해시테이블덕에 정말 개같이 만듬... 템플릿특수화로 추가함...
 			size_t h3 = hash<float>()(p.scaleX);
 			size_t h4 = hash<float>()(p.scaleY);
 			size_t h5 = hash<int>()(p.originalResolution.cx ^ p.originalResolution.cy);
-			return h1 ^ (h2 << 1) ^ (h3 << 2) ^ (h4 << 3) ^ (h5 << 4);
+			size_t h6 = hash<size_t>()(p.parts.size());
+			return h1 ^ (h2 << 1) ^ (h3 << 2) ^ (h4 << 3) ^ (h5 << 4) ^ (h6 << 5);
 		}
 	};
 }

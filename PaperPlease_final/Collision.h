@@ -1,6 +1,7 @@
 #pragma once
 #include "PMath.h"
 #include <Windows.h>
+
 class RectCollision
 {
 public:
@@ -27,8 +28,6 @@ public:
 
 		return rt;
 	}
-
-
 private:
 	// 왼쪽 위 좌표 (Rect의 기준점)
 	Vector2 _pos;

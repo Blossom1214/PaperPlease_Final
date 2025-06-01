@@ -13,6 +13,11 @@ DrawImageCommand::DrawImageCommand(Image* img, int dstX, int dstY, int srcX, int
     : _img(img), _x(dstX), _y(dstY), _srcX(srcX), _srcY(srcY), _w(width), _h(height),
     _useSrcRect(true) {
 }
+// 복합레이어 생성자
+//DrawImageCommand::DrawImageCommand(Image* img, int dstX, int dstY, int offsetX, int offsetY, int width, int height)
+//    : _img(img), _x(dstX), _y(dstY), _offsetX(offsetX), _offsetY(offsetY), _w(width), _h(height),
+//    _useSrcRect(false) {
+//}
 
 void DrawImageCommand::Execute(Graphics* g, float sx, float sy)
 {

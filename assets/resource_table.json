@@ -8,7 +8,7 @@
       },
       "scale": {
         "x": 2.3,
-        "y": 2.1
+        "y": 2.3
       },
       "originalResolution": {
         "w": 1280,
@@ -19,11 +19,11 @@
       "path": "..\\assets\\Desk.png",
       "position": {
         "x": 0,
-        "y": 214
+        "y": 235
       },
       "scale": {
         "x": 2.3,
-        "y": 2.33
+        "y": 2.235
       },
       "originalResolution": {
         "w": 1280,
@@ -34,11 +34,11 @@
       "path": "..\\assets\\BoothWall.png",
       "position": {
         "x": 0,
-        "y": 214
+        "y": 235
       },
       "scale": {
         "x": 2.3,
-        "y": 2.2
+        "y": 2.235
       },
       "originalResolution": {
         "w": 1280,
@@ -217,12 +217,12 @@
   "uiComplexSprite": {
     "StampBar": {
       "position": {
-        "x": 1000,
-        "y": 600
+        "x": 1260,
+        "y": 320
       },
       "scale": {
-        "x": 2.3,
-        "y": 2.1
+        "x": 2.0,
+        "y": 2.0
       },
       "originalResolution": {
         "w": 1280,
@@ -241,33 +241,33 @@
           "path": "..\\assets\\StampBarMid.png",
           "offset": {
             "x": 0,
-            "y": 20
+            "y": 80
           },
-          "zOrder": 2
+          "zOrder": 3
         },
         "stamp_approve": {
           "path": "..\\assets\\StampBotApproved.png",
           "offset": {
-            "x": 30,
-            "y": 120
+            "x": 320,
+            "y": -20
           },
           "zOrder": 1
         },
         "stamp_deny": {
           "path": "..\\assets\\StampBotDenied.png",
           "offset": {
-            "x": 130,
-            "y": 120
+            "x": 80,
+            "y": -20
           },
           "zOrder": 1
         },
-        "lamp": {
-          "path": "..\\assets\\StampBarLamp.png",
+        "bot": {
+          "path": "..\\assets\\StampBarBot.png",
           "offset": {
-            "x": 10,
-            "y": -10
+            "x": 0,
+            "y": 110
           },
-          "zOrder": 3
+          "zOrder": 2
         }
       }
     }

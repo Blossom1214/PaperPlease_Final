@@ -12,7 +12,7 @@ public:
 
 
 	virtual void Update(float dt) = 0;
-	virtual void Render(Gdiplus::Graphics& g) = 0;
+	virtual void Render(Gdiplus::Graphics* g) = 0;
 	virtual void ClickKey()=0;
 
 	//포인터 타입으로 반환(r_value ref로도 가능함) 변환비용을 생각하면 이동이 더 좋은방향인거같음

@@ -19,9 +19,11 @@ public:
 		return instance;
 	}
 	//preloading
-	void PreloadingImageJson();
+	void PreloadingImageJson(const std::string& Key);
 	//lazy loading
 	void LazyloadingImageJson(std::string& strkey, std::string& strimg);
+	//lazy loading ComplexSprite
+	void LazyloadingUIComplexSpriteJson(const std::string& Key,const std::string& name);
 	//resource memory clear
 	void Clear();
 	//initial

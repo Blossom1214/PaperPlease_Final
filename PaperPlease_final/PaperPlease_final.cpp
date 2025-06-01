@@ -150,7 +150,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     backBuffer.Initialize(g_hWnd);
     auto& resMgr = ResourceManager::GetInstance();
     resMgr.InitImgJson();
-    resMgr.PreloadingImageJson();
+    resMgr.PreloadingImageJson("images");
     SceneManager::GetInstance().RegisterScene(SceneType::MAINGAME, std::make_shared<MainGameScene>());
     SceneManager::GetInstance().ChangeScene(SceneType::MAINGAME);
     return TRUE;

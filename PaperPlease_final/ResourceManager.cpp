@@ -4,9 +4,9 @@
 #include "ConvertStr.h"
 using namespace std;
 using namespace Gdiplus;
-void ResourceManager::PreloadingImageJson()
+void ResourceManager::PreloadingImageJson(const string& Key)
 {
-    for (const auto& [key, value] : _jsonImgData["images"].items()) {
+    for (const auto& [key, value] : _jsonImgData[Key].items()) {
         wstring wkey = ConvertToWString(key);
         wstring wpath = ConvertToWString(value["path"]);
         auto img = LoadImageFromFile(wpath); 
@@ -147,8 +147,44 @@ void ResourceManager::LazyloadingImageJson(string& strkey,string& strimg)
         ir.originalResolution.cx = value["originalResolution"]["w"];
         ir.originalResolution.cy = value["originalResolution"]["h"];
     }
+    
     _images[wkey] = move(ir);
  
+}
+
+void ResourceManager::LazyloadingUIComplexSpriteJson(const string& Key,const string& name)
+{
+    const auto& value = _jsonImgData[Key][name];
+    wstring wkey = ConvertToWString(name);
+
+    ImageResource ir;
+    ir.pos.x = value["position"]["x"];
+    ir.pos.y = value["position"]["y"];
+    ir.scaleX = value["scale"]["x"];
+    ir.scaleY = value["scale"]["y"];
+    ir.originalResolution.cx = value["originalResolution"]["w"];
+    ir.originalResolution.cy = value["originalResolution"]["h"];
+
+    if (value.contains("parts")) {
+        for (const auto& [partName, partValue] : value["parts"].items()) {
+            Parts part;
+            part.path = ConvertToWString(partValue["path"]);
+            part.offset.x = partValue["offset"]["x"];
+            part.offset.y = partValue["offset"]["y"];
+            part.zOrder = partValue["zOrder"];
+
+            part.img = unique_ptr<Image>(LoadImageFromFile(part.path));
+            if (!part.img) {
+                OutputDebugString((L"[ResourceManager] 파츠 로딩 실패: " + part.path + L"\n").c_str());
+                continue;
+            }
+
+            ir.parts[ConvertToWString(partName)] = std::move(part);
+        }
+    }
+
+    _images[wkey] = move(ir);
+
 }
 
 void ResourceManager::Clear()
@@ -183,8 +219,9 @@ optional<string> ResourceManager::GetSectionKey(const wstring& name)
 ImageResource* ResourceManager::GetImageResource(const wstring& key)
 {
     auto it = _images.find(key);
-    if (it != _images.end() && it->second.img)
-        return &(it->second);
+    if (it != _images.end())// && it->second.img)
+        if (it->second.img || !it->second.parts.empty())
+         return &(it->second);
     return nullptr;
 }
 

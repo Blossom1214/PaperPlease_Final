@@ -5,7 +5,8 @@ using namespace std;
 void AnimationManager::Register(const wstring& name)
 {
 
-	if (_resourceRef.count(name)) return;
+	if (_resourceRef.count(name))
+		return;
 	auto& resMgr = ResourceManager::GetInstance();
 	ImageResource* res = resMgr.GetImageResource(name);
 	if (!res)

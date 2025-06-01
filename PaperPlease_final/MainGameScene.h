@@ -12,8 +12,8 @@ public:
     void AddDayCount() { _DayCount += 1; }
 private:
     std::vector<std::unique_ptr<SoldierObj>> _SoldierNpcs;
-    std::vector<std::unique_ptr<VisitorObj>> _VisitorObj;
 
+    
     std::vector<std::unique_ptr<VisitorObj>> _VisitorNpcs;
 
     UINT _DayCount=2;

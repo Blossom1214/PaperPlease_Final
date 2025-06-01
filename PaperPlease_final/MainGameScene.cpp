@@ -3,6 +3,8 @@
 #include "ResourceManager.h"
 #include "DoubleBufferManager.h"
 #include "RenderManager.h"
+#include "UIManager.h"
+#include "UIStempBar.h"
 using namespace std;
 using namespace Gdiplus;
 extern DoubleBufferManager backBuffer;
@@ -17,10 +19,14 @@ void MainGameScene::Init()
     const AnimationSequence* seqSWalk = AnimationManager::GetInstance().Get(L"soldier", L"walk");
     const AnimationSequence* seqVIdle = AnimationManager::GetInstance().Get(L"visitor", L"idle");
   
-     
+    auto stampBar = make_unique<UIStempBar>();
+    stampBar->Init();
+    UIManager::GetInstance().UIRegister(L"StampBar", std::move(stampBar));
 
+    ResourceManager::GetInstance().LazyloadingUIComplexSpriteJson("uiComplexSprite", "StampBar");
 
-
+    
+    
     
 
       if (_DayCount <= 2) {
@@ -29,7 +35,6 @@ void MainGameScene::Init()
           soldier->SetPosition({ 1100.0f, -100.0f });
           soldier->StartWalkingTo({ 1100.0f, 100.0f }, 0.f);
           _VisitorNpcs.emplace_back(move(soldier));
-
       }
       if (_DayCount == 3)
       {
@@ -65,9 +70,12 @@ void MainGameScene::Init()
               {
                   visitor->SetPosition({ (145.f), (42.5f + offset + (0.75f * Change_sign)) });
               }
-         _VisitorObj.emplace_back(move(visitor));
+              _VisitorNpcs.emplace_back(move(visitor));
+          }
       }
-   }
+
+
+
  }
 
 void MainGameScene::Update(float dt)
@@ -76,11 +84,11 @@ void MainGameScene::Update(float dt)
     {
         npc->Update(dt);
     }
-    for (auto& npc : _VisitorObj)
+    for (auto& npc : _VisitorNpcs)
     {
         npc->Update(dt);
     }
-
+    UIManager::GetInstance().Update(dt);
 }
 void MainGameScene::Render()
 {
@@ -88,14 +96,17 @@ void MainGameScene::Render()
     {
         npc->Render(backBuffer.GetGraphics());
     }
-    for (auto& npc : _VisitorObj)
+    for (auto& npc : _VisitorNpcs)
     {
         npc->Render(backBuffer.GetGraphics());
     }
+    UIManager::GetInstance().Render(backBuffer.GetGraphics());
 }
 void  MainGameScene::Release()
 {
+    
     _SoldierNpcs.clear();
-    _VisitorObj.clear();
+    _VisitorNpcs.clear();
+    
     RenderManager::GetInstance().ClearPerFrame();
 }

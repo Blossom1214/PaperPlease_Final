@@ -5,7 +5,7 @@ class UIStempBar : public UIBase
 public:
 	void Init();
 	void Update(float dt);
-	void Render();
+	void Render(Gdiplus::Graphics* g)override;
 	void ClickKey()override;
 	void Release();
 private:
