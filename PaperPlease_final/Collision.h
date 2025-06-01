@@ -1,6 +1,6 @@
 #pragma once
 #include "PMath.h"
-#include <Windows.h>
+#include "framework.h"
 
 class RectCollision
 {
@@ -27,6 +27,18 @@ public:
 		rt.bottom = static_cast<LONG>(_pos.y + _size.y);
 
 		return rt;
+	}
+	void DebugRender(Gdiplus::Graphics* g) const
+	{
+		/*OutputDebugStringW((L"[DebugRender] DrawRect: Pos(" +
+			std::to_wstring(_pos.x) + L"," +
+			std::to_wstring(_pos.y) + L"), Size(" +
+			std::to_wstring(_size.x) + L"," +
+			std::to_wstring(_size.y) + L")\n").c_str());*/
+
+		Gdiplus::Pen pen(Gdiplus::Color(255, 0, 255, 0), 2.0f); // 반투명 빨강, 굵기 2px
+		Gdiplus::RectF rect(_pos.x, _pos.y, _size.x, _size.y);
+		g->DrawRectangle(&pen, rect);
 	}
 private:
 	// 왼쪽 위 좌표 (Rect의 기준점)

@@ -7,12 +7,21 @@ using namespace std;
 void UIStempBar::Init()
 {
     ResourceManager::GetInstance().LazyloadingUIComplexSpriteJson("uiComplexSprite", "StampBar");
+    _collision = std::make_unique<RectCollision>();
+    ImageResource* res = ResourceManager::GetInstance().GetImageResource(L"StampBar");
+    if (!res) return;
+    _pos = Vector2{ static_cast<float>(res->pos.x), static_cast<float>(res->pos.y) };
+    _size = Vector2{ 560.0f, 110.0f };
     _collision->SetPos(_pos);
     _collision->SetSize(_size);
 }
 void UIStempBar::Update(float dt)
 {
-	
+   
+    if (CollisionManager::GetInstance().CheckClickCollision(*_collision))
+    {
+        ClickKey();
+    }
 
 }
 void UIStempBar::Render(Gdiplus::Graphics* g)
@@ -33,14 +42,16 @@ void UIStempBar::Render(Gdiplus::Graphics* g)
         const auto& [name, part] = ref.get();
         if (!part.img) continue;
 
-        int drawX = static_cast<int>(_pos.x + res->pos.x+part.offset.x);
-        int drawY = static_cast<int>(_pos.y + res->pos.y+part.offset.y);
+        int drawX = static_cast<int>(_pos.x+part.offset.x);
+        int drawY = static_cast<int>(_pos.y+part.offset.y);
         int drawW = part.img->GetWidth()*(res->scaleX);
         int drawH = part.img->GetHeight()*(res->scaleY);
 
         auto cmd = make_unique<DrawImageCommand>(part.img.get(), drawX, drawY, drawW, drawH);
         RenderManager::GetInstance().GetDynamicLayer().Add(std::move(cmd));
     }
+   
+    _collision->DebugRender(g);
     
 }
 void UIStempBar::ClickKey()
@@ -48,10 +59,15 @@ void UIStempBar::ClickKey()
     
     _StempOn = !_StempOn;
 
-    if (_StempOn)
+    if (_StempOn) {
         _pos.x -= 540;
+    }
     else
+    {
         _pos.x += 540;
+    }
+    _collision->SetPos(_pos);
+    _collision->SetSize(_size);
 }
 void UIStempBar::Release()
 {

@@ -12,6 +12,7 @@
 #include "MainGameScene.h"
 #include "Define.h"
 #include "SoldierObj.h"
+#include "CollisionManager.h"
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
 #define MAX_LOADSTRING 100
@@ -149,6 +150,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     g_hWnd = hWnd;
     backBuffer.Initialize(g_hWnd);
     auto& resMgr = ResourceManager::GetInstance();
+    CollisionManager::GetInstance().SetWindowsClient(g_hWnd);
     resMgr.InitImgJson();
     resMgr.PreloadingImageJson("images");
     SceneManager::GetInstance().RegisterScene(SceneType::MAINGAME, std::make_shared<MainGameScene>());

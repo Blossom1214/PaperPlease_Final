@@ -5,11 +5,13 @@
 #include "RenderManager.h"
 #include "UIManager.h"
 #include "UIStempBar.h"
+
 using namespace std;
 using namespace Gdiplus;
 extern DoubleBufferManager backBuffer;
 void MainGameScene::Init()
 {
+    
     AddDayCount();
 
     InitStaticRenderLayer(ResourceManager::GetInstance().GetImageResource(L"CheckpointBack"));

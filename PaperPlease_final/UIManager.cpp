@@ -13,10 +13,6 @@ void UIManager::Update(float dt)
         ui->Update(dt);
        
     }
-    for (const auto& [key, ui] : UIstorage)
-    {
-        ui->ClickKey();
-    }
 }
 
 void UIManager::Render(Gdiplus::Graphics* g)
